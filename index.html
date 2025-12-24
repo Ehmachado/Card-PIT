@@ -34,7 +34,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 2px 10px rgba(201, 162, 39, 0.3);
         }
         
         .input-section {
@@ -51,18 +50,6 @@
             font-size: 1.1rem;
         }
         
-        .input-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-        
-        .input-group > div {
-            flex: 1;
-            min-width: 300px;
-        }
-        
         label {
             display: block;
             margin-bottom: 8px;
@@ -71,49 +58,7 @@
             font-size: 0.9rem;
         }
         
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 15px;
-            border: 2px solid rgba(201, 162, 39, 0.3);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            resize: vertical;
-            transition: all 0.3s ease;
-        }
-        
-        textarea:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-        
-        textarea::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid rgba(201, 162, 39, 0.3);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-        
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-        
         .file-input-wrapper {
-            position: relative;
             margin-bottom: 15px;
         }
         
@@ -188,12 +133,6 @@
             box-shadow: 0 6px 20px rgba(201, 162, 39, 0.6);
         }
         
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
         .btn-secondary {
             background: transparent;
             color: #f4d675;
@@ -241,7 +180,7 @@
         
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 25px;
             margin-top: 20px;
         }
@@ -256,9 +195,10 @@
         .card-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 1400 / 989;
+            aspect-ratio: 1410 / 924;
             overflow: hidden;
             border-radius: 8px;
+            background: #1a2d4a;
         }
         
         .card-base {
@@ -269,57 +209,14 @@
         
         .card-photo {
             position: absolute;
-            width: 17.14%;
-            height: 24.37%;
-            top: 45.5%;
-            left: 28.5%;
+            width: 15%;
+            aspect-ratio: 1;
+            top: 47%;
+            left: 29.5%;
+            transform: translate(-50%, -50%);
             border-radius: 50%;
             object-fit: cover;
             object-position: center top;
-            border: 4px solid #d4af37;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-        
-        .card-name {
-            position: absolute;
-            top: 75.5%;
-            left: 17%;
-            width: 27%;
-            height: 5.5%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a2d4a;
-            font-weight: 700;
-            font-size: 0.85vw;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
-            padding: 0 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        
-        .card-agency {
-            position: absolute;
-            top: 75.5%;
-            left: 47%;
-            width: 27%;
-            height: 5.5%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a2d4a;
-            font-weight: 700;
-            font-size: 0.85vw;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
-            padding: 0 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
         
         .card-actions {
@@ -348,58 +245,15 @@
             font-size: 0.95rem;
         }
         
-        .card-info-agency {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8rem;
-            margin-top: 3px;
-        }
-        
-        .card-status {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
+        .card-info-file {
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.7rem;
-            margin-top: 8px;
-            font-weight: 600;
-        }
-        
-        .status-ok {
-            background: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
-        }
-        
-        .status-warning {
-            background: rgba(251, 191, 36, 0.2);
-            color: #fbbf24;
-        }
-        
-        .status-error {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
+            margin-top: 3px;
+            font-family: 'Courier New', monospace;
         }
         
         .hidden {
             display: none;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #f4d675;
-        }
-        
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(212, 175, 55, 0.2);
-            border-top-color: #d4af37;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
         
         .instructions {
@@ -444,32 +298,31 @@
             border: 1px solid rgba(34, 197, 94, 0.3);
         }
         
-        .photo-preview {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #d4af37;
-            margin-top: 8px;
-        }
-        
-        .file-status {
-            font-size: 0.75rem;
-            margin-top: 5px;
-        }
-        
-        /* Canvas for export - hidden */
         #exportCanvas {
             display: none;
+        }
+        
+        .base-image-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        
+        .base-image-status.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .base-image-status.success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
         }
         
         @media (max-width: 768px) {
             .cards-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .input-group {
-                flex-direction: column;
             }
             
             h1 {
@@ -485,38 +338,30 @@
         <div class="instructions">
             <h3>📋 Como usar:</h3>
             <ul>
-                <li>Cole a planilha com os dados (Nome e Agência separados por TAB)</li>
+                <li>Coloque o arquivo <strong>card.jpg</strong> na mesma pasta do index.html</li>
                 <li>Selecione a pasta com as fotos dos colaboradores</li>
-                <li>As fotos devem ter o nome do colaborador (ex: "JOÃO SILVA.jpg" ou "joao silva.png")</li>
-                <li>A imagem base "card.jpg" deve estar na raiz do projeto</li>
-                <li>Formatos aceitos: JPG, JPEG, PNG, WEBP</li>
+                <li>Um card será gerado para cada foto (sem nome/agência)</li>
             </ul>
         </div>
         
         <div class="input-section">
             <h2>⚙️ Configurações</h2>
-            <div class="input-group">
-                <div>
-                    <label for="dataInput">📊 Cole os dados da planilha (Nome + TAB + Agência):</label>
-                    <textarea id="dataInput" placeholder="JOÃO SILVA	BARREIRAS
-MARIA SANTOS	LUÍS EDUARDO MAGALHÃES
-PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
-..."></textarea>
-                </div>
-                <div>
-                    <label>📁 Selecione a pasta de fotos:</label>
-                    <div class="file-input-wrapper">
-                        <label class="file-input-btn" id="folderBtn">
-                            <span>📂 Clique para selecionar a pasta</span>
-                            <input type="file" id="folderInput" webkitdirectory directory multiple>
-                        </label>
-                        <div class="file-info" id="folderInfo">Nenhuma pasta selecionada</div>
-                    </div>
+            
+            <div id="baseImageStatus" class="base-image-status" style="display:none;"></div>
+            
+            <div>
+                <label>📁 Selecione a pasta de fotos:</label>
+                <div class="file-input-wrapper">
+                    <label class="file-input-btn" id="folderBtn">
+                        <span>📂 Clique para selecionar a pasta</span>
+                        <input type="file" id="folderInput" webkitdirectory directory multiple>
+                    </label>
+                    <div class="file-info" id="folderInfo">Nenhuma pasta selecionada</div>
                 </div>
             </div>
             
             <div class="btn-group">
-                <button class="btn-primary" onclick="processData()" id="generateBtn">🚀 Gerar Cards</button>
+                <button class="btn-primary" onclick="processPhotos()">🚀 Gerar Cards</button>
                 <button class="btn-secondary" onclick="clearAll()">🗑️ Limpar Tudo</button>
             </div>
         </div>
@@ -528,20 +373,12 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
                     <div class="stat-number" id="totalCards">0</div>
                     <div class="stat-label">Total de Cards</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="cardsOk">0</div>
-                    <div class="stat-label">Com Foto</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="cardsWarning">0</div>
-                    <div class="stat-label">Sem Foto</div>
-                </div>
             </div>
         </div>
         
         <div id="exportAllSection" class="export-all-section hidden">
             <button class="btn-success" onclick="exportAllCards()">📥 Exportar Todos os Cards (ZIP)</button>
-            <p style="margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.6);">Baixa todos os cards em um arquivo ZIP</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.6);" id="exportProgress">Baixa todos os cards em um arquivo ZIP</p>
         </div>
         
         <div id="cardsContainer" class="cards-grid"></div>
@@ -549,19 +386,53 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
     
     <canvas id="exportCanvas"></canvas>
     
-    <!-- JSZip para exportar múltiplos arquivos -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     
     <script>
         let cardsData = [];
-        let baseImageLoaded = null;
-        let photoFiles = {}; // Mapa de nome normalizado -> File object
         let baseImageDataUrl = null;
+        
+        // Dimensões do card original
+        const CARD_WIDTH = 1410;
+        const CARD_HEIGHT = 924;
+        
+        // Posições dos elementos (em percentual da imagem)
+        const PHOTO_CENTER_X = 0.295;
+        const PHOTO_CENTER_Y = 0.47;
+        const PHOTO_RADIUS_PERCENT = 0.075;
+        
+        // Carrega imagem base ao iniciar
+        window.onload = function() {
+            loadBaseImage();
+        };
+        
+        function loadBaseImage() {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth || img.width;
+                canvas.height = img.naturalHeight || img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                baseImageDataUrl = canvas.toDataURL('image/png', 1.0);
+                
+                const status = document.getElementById('baseImageStatus');
+                status.style.display = 'block';
+                status.className = 'base-image-status success';
+                status.textContent = '✓ Imagem base card.jpg carregada com sucesso! (' + canvas.width + 'x' + canvas.height + ')';
+            };
+            img.onerror = function() {
+                const status = document.getElementById('baseImageStatus');
+                status.style.display = 'block';
+                status.className = 'base-image-status error';
+                status.textContent = '✗ Erro: Arquivo card.jpg não encontrado! Coloque o arquivo na mesma pasta do index.html';
+            };
+            img.src = 'card.jpg?' + new Date().getTime();
+        }
         
         // Event listener para seleção de pasta
         document.getElementById('folderInput').addEventListener('change', function(e) {
             const files = e.target.files;
-            photoFiles = {};
             
             if (files.length === 0) {
                 document.getElementById('folderInfo').textContent = 'Nenhuma pasta selecionada';
@@ -576,18 +447,7 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             for (let i = 0; i < files.length; i++) {
                 const file = files[i];
                 const ext = file.name.split('.').pop().toLowerCase();
-                
                 if (imageExtensions.includes(ext)) {
-                    // Pega apenas o nome do arquivo sem extensão
-                    const nameWithoutExt = file.name.substring(0, file.name.lastIndexOf('.'));
-                    const normalizedName = normalizeFileName(nameWithoutExt);
-                    
-                    // Armazena o arquivo com diferentes variações do nome
-                    photoFiles[normalizedName] = file;
-                    photoFiles[nameWithoutExt.toLowerCase()] = file;
-                    photoFiles[nameWithoutExt.toUpperCase()] = file;
-                    photoFiles[nameWithoutExt] = file;
-                    
                     imageCount++;
                 }
             }
@@ -598,49 +458,6 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             document.getElementById('folderBtn').querySelector('span').textContent = `📂 ${imageCount} fotos carregadas`;
         });
         
-        // Normaliza nome para buscar arquivo
-        function normalizeFileName(name) {
-            return name
-                .toLowerCase()
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '') // Remove acentos
-                .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais
-                .replace(/\s+/g, ' ') // Normaliza espaços
-                .trim();
-        }
-        
-        // Busca foto pelo nome do colaborador
-        function findPhotoForName(name) {
-            const normalized = normalizeFileName(name);
-            const variations = [
-                normalized,
-                name.toLowerCase(),
-                name.toUpperCase(),
-                name,
-                normalized.replace(/\s+/g, '_'),
-                normalized.replace(/\s+/g, '-'),
-                name.replace(/\s+/g, '_'),
-                name.replace(/\s+/g, '-')
-            ];
-            
-            for (const variation of variations) {
-                if (photoFiles[variation]) {
-                    return photoFiles[variation];
-                }
-            }
-            
-            // Busca parcial - se não encontrar exato, tenta encontrar contendo o nome
-            const normalizedLower = normalized.toLowerCase();
-            for (const key in photoFiles) {
-                if (key.includes(normalizedLower) || normalizedLower.includes(key)) {
-                    return photoFiles[key];
-                }
-            }
-            
-            return null;
-        }
-        
-        // Converte File para DataURL
         function fileToDataURL(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -650,122 +467,92 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             });
         }
         
-        // Processa os dados colados
-        async function processData() {
-            const input = document.getElementById('dataInput').value.trim();
+        function getNameFromFile(filename) {
+            // Remove extensão e retorna o nome do arquivo
+            return filename.substring(0, filename.lastIndexOf('.')) || filename;
+        }
+        
+        function normalizeFileName(name) {
+            return name
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '_')
+                .trim();
+        }
+        
+        async function processPhotos() {
+            const files = document.getElementById('folderInput').files;
             
-            if (!input) {
-                alert('Por favor, cole os dados da planilha.');
+            if (!baseImageDataUrl) {
+                alert('Erro: Imagem base card.jpg não foi carregada. Verifique se o arquivo existe na mesma pasta do index.html.');
                 return;
             }
             
-            if (Object.keys(photoFiles).length === 0) {
+            if (files.length === 0) {
                 alert('Por favor, selecione a pasta com as fotos.');
                 return;
             }
             
-            // Parseia os dados (suporta TAB ou múltiplos espaços como separador)
-            const lines = input.split('\n').filter(line => line.trim());
+            const imageExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
             cardsData = [];
             
-            for (let index = 0; index < lines.length; index++) {
-                const line = lines[index];
-                // Tenta separar por TAB primeiro, depois por múltiplos espaços
-                let parts = line.split('\t');
-                if (parts.length < 2) {
-                    parts = line.split(/\s{2,}/);
-                }
+            let index = 0;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const ext = file.name.split('.').pop().toLowerCase();
                 
-                if (parts.length >= 2) {
-                    const name = parts[0].trim();
-                    const agency = parts[1].trim();
+                if (imageExtensions.includes(ext)) {
+                    const photoDataUrl = await fileToDataURL(file);
+                    const displayName = getNameFromFile(file.name);
                     
-                    if (name && agency) {
-                        const photoFile = findPhotoForName(name);
-                        let photoDataUrl = null;
-                        
-                        if (photoFile) {
-                            photoDataUrl = await fileToDataURL(photoFile);
-                        }
-                        
-                        cardsData.push({
-                            id: index,
-                            name: name,
-                            agency: agency,
-                            photoFile: photoFile,
-                            photoDataUrl: photoDataUrl,
-                            photoLoaded: !!photoDataUrl
-                        });
-                    }
+                    cardsData.push({
+                        id: index,
+                        fileName: file.name,
+                        displayName: displayName,
+                        photoDataUrl: photoDataUrl
+                    });
+                    
+                    index++;
                 }
             }
             
             if (cardsData.length === 0) {
-                alert('Nenhum dado válido encontrado. Certifique-se de que o formato está correto (Nome + TAB + Agência).');
+                alert('Nenhuma foto encontrada na pasta selecionada.');
                 return;
             }
             
-            // Carrega a imagem base
-            await loadBaseImage();
+            // Ordena por nome do arquivo
+            cardsData.sort((a, b) => a.displayName.localeCompare(b.displayName));
+            
+            // Reatribui IDs após ordenação
+            cardsData.forEach((card, idx) => {
+                card.id = idx;
+            });
+            
             renderCards();
             updateStats();
             document.getElementById('statsSection').classList.remove('hidden');
             document.getElementById('exportAllSection').classList.remove('hidden');
         }
         
-        // Carrega a imagem base (card.jpg na raiz)
-        async function loadBaseImage() {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
-                img.onload = () => {
-                    baseImageLoaded = img;
-                    
-                    // Converte para DataURL para uso posterior
-                    const canvas = document.createElement('canvas');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0);
-                    baseImageDataUrl = canvas.toDataURL('image/jpeg', 1.0);
-                    
-                    resolve();
-                };
-                img.onerror = () => {
-                    console.error('Erro ao carregar imagem base');
-                    baseImageLoaded = null;
-                    resolve();
-                };
-                img.src = 'card.jpg';
-            });
-        }
-        
-        // Renderiza os cards
         function renderCards() {
             const container = document.getElementById('cardsContainer');
             container.innerHTML = '';
             
-            cardsData.forEach((card, index) => {
+            cardsData.forEach((card) => {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'card-wrapper';
-                wrapper.id = `card-wrapper-${card.id}`;
-                
-                const photoStyle = card.photoDataUrl ? '' : 'display: none;';
-                const photoSrc = card.photoDataUrl || '';
                 
                 wrapper.innerHTML = `
                     <div class="card-container" id="card-${card.id}">
-                        <img class="card-base" src="card.jpg" alt="Card Base" crossorigin="anonymous">
-                        <img class="card-photo" id="photo-${card.id}" src="${photoSrc}" alt="Foto" style="${photoStyle}" crossorigin="anonymous">
-                        <div class="card-name">${card.name}</div>
-                        <div class="card-agency">${card.agency}</div>
+                        <img class="card-base" src="${baseImageDataUrl}" alt="Card Base">
+                        <img class="card-photo" id="photo-${card.id}" src="${card.photoDataUrl}" alt="Foto">
                     </div>
                     <div class="card-info">
-                        <div class="card-info-name">${card.name}</div>
-                        <div class="card-info-agency">${card.agency}</div>
-                        <span class="card-status ${card.photoLoaded ? 'status-ok' : 'status-error'}" id="status-${card.id}">
-                            ${card.photoLoaded ? '✓ Foto encontrada' : '✗ Foto não encontrada'}
-                        </span>
+                        <div class="card-info-name">${card.displayName}</div>
+                        <div class="card-info-file">${card.fileName}</div>
                     </div>
                     <div class="card-actions">
                         <button class="btn-secondary" onclick="changePhoto(${card.id})">📷 Trocar Foto</button>
@@ -777,18 +564,10 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             });
         }
         
-        // Atualiza estatísticas
         function updateStats() {
-            const total = cardsData.length;
-            const withPhoto = cardsData.filter(c => c.photoLoaded).length;
-            const withoutPhoto = total - withPhoto;
-            
-            document.getElementById('totalCards').textContent = total;
-            document.getElementById('cardsOk').textContent = withPhoto;
-            document.getElementById('cardsWarning').textContent = withoutPhoto;
+            document.getElementById('totalCards').textContent = cardsData.length;
         }
         
-        // Permite trocar a foto manualmente
         function changePhoto(cardId) {
             const input = document.createElement('input');
             input.type = 'file';
@@ -799,275 +578,141 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
                 if (file) {
                     const dataUrl = await fileToDataURL(file);
                     const card = cardsData.find(c => c.id === cardId);
-                    const photoElement = document.getElementById(`photo-${cardId}`);
-                    const statusElement = document.getElementById(`status-${cardId}`);
                     
                     card.photoDataUrl = dataUrl;
-                    card.photoLoaded = true;
                     
+                    const photoElement = document.getElementById(`photo-${cardId}`);
                     photoElement.src = dataUrl;
-                    photoElement.style.display = 'block';
-                    
-                    statusElement.textContent = '✓ Foto carregada manualmente';
-                    statusElement.className = 'card-status status-ok';
-                    
-                    updateStats();
                 }
             };
             
             input.click();
         }
         
-        // Exporta um único card
-        async function exportCard(cardId) {
-            const card = cardsData.find(c => c.id === cardId);
-            const canvas = document.getElementById('exportCanvas');
+        function loadImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = (e) => reject(e);
+                img.src = src;
+            });
+        }
+        
+        async function renderCardToCanvas(card, canvas) {
             const ctx = canvas.getContext('2d');
             
-            // Dimensões originais do card (baseadas na imagem 1400x989)
-            const WIDTH = 1400;
-            const HEIGHT = 989;
+            canvas.width = CARD_WIDTH;
+            canvas.height = CARD_HEIGHT;
             
-            canvas.width = WIDTH;
-            canvas.height = HEIGHT;
+            // Desenha imagem base
+            const baseImg = await loadImage(baseImageDataUrl);
+            ctx.drawImage(baseImg, 0, 0, CARD_WIDTH, CARD_HEIGHT);
             
-            // Carrega e desenha a imagem base
-            const baseImg = await loadImage('card.jpg');
-            ctx.drawImage(baseImg, 0, 0, WIDTH, HEIGHT);
-            
-            // Desenha a foto (se existir)
+            // Desenha foto circular
             if (card.photoDataUrl) {
                 const photo = await loadImage(card.photoDataUrl);
                 
-                // Posição e tamanho da foto (circular)
-                const photoX = WIDTH * 0.285;
-                const photoY = HEIGHT * 0.455;
-                const photoW = WIDTH * 0.1714;
-                const photoH = HEIGHT * 0.2437;
-                const radius = Math.min(photoW, photoH) / 2;
-                const centerX = photoX + photoW / 2;
-                const centerY = photoY + photoH / 2;
+                const centerX = CARD_WIDTH * PHOTO_CENTER_X;
+                const centerY = CARD_HEIGHT * PHOTO_CENTER_Y;
+                const radius = CARD_WIDTH * PHOTO_RADIUS_PERCENT;
                 
-                // Clip circular
                 ctx.save();
                 ctx.beginPath();
                 ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
                 ctx.closePath();
                 ctx.clip();
                 
-                // Desenha a foto ajustando para cobrir o círculo
+                // Calcula dimensões para cobrir o círculo
                 const aspectRatio = photo.width / photo.height;
                 let drawWidth, drawHeight, drawX, drawY;
                 
                 if (aspectRatio > 1) {
                     drawHeight = radius * 2;
                     drawWidth = drawHeight * aspectRatio;
-                    drawX = centerX - drawWidth / 2;
-                    drawY = centerY - radius;
                 } else {
                     drawWidth = radius * 2;
                     drawHeight = drawWidth / aspectRatio;
-                    drawX = centerX - radius;
-                    drawY = centerY - drawHeight / 2;
                 }
+                
+                drawX = centerX - drawWidth / 2;
+                drawY = centerY - drawHeight / 2;
                 
                 ctx.drawImage(photo, drawX, drawY, drawWidth, drawHeight);
                 ctx.restore();
-                
-                // Borda dourada ao redor da foto
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius + 3, 0, Math.PI * 2);
-                ctx.strokeStyle = '#d4af37';
-                ctx.lineWidth = 6;
-                ctx.stroke();
             }
-            
-            // Desenha o nome
-            const nameX = WIDTH * 0.17;
-            const nameY = HEIGHT * 0.755;
-            const nameW = WIDTH * 0.27;
-            const nameH = HEIGHT * 0.055;
-            
-            ctx.fillStyle = '#1a2d4a';
-            ctx.font = 'bold 18px Montserrat, Arial, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            
-            // Ajusta o tamanho da fonte se necessário
-            let fontSize = 18;
-            ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-            while (ctx.measureText(card.name.toUpperCase()).width > nameW - 20 && fontSize > 10) {
-                fontSize--;
-                ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-            }
-            
-            ctx.fillText(card.name.toUpperCase(), nameX + nameW / 2, nameY + nameH / 2);
-            
-            // Desenha a agência
-            const agencyX = WIDTH * 0.47;
-            const agencyY = HEIGHT * 0.755;
-            const agencyW = WIDTH * 0.27;
-            const agencyH = HEIGHT * 0.055;
-            
-            fontSize = 18;
-            ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-            while (ctx.measureText(card.agency.toUpperCase()).width > agencyW - 20 && fontSize > 10) {
-                fontSize--;
-                ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-            }
-            
-            ctx.fillText(card.agency.toUpperCase(), agencyX + agencyW / 2, agencyY + agencyH / 2);
-            
-            // Exporta como PNG
-            const link = document.createElement('a');
-            const fileName = `Card_PIT+_${normalizeFileName(card.name).replace(/\s+/g, '_')}.png`;
-            link.download = fileName;
-            link.href = canvas.toDataURL('image/png', 1.0);
-            link.click();
         }
         
-        // Carrega uma imagem e retorna uma Promise
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
-                img.onload = () => resolve(img);
-                img.onerror = reject;
-                img.src = src;
-            });
-        }
-        
-        // Exporta todos os cards em um ZIP
-        async function exportAllCards() {
-            const zip = new JSZip();
-            const canvas = document.getElementById('exportCanvas');
-            const ctx = canvas.getContext('2d');
-            const WIDTH = 1400;
-            const HEIGHT = 989;
-            
-            canvas.width = WIDTH;
-            canvas.height = HEIGHT;
-            
-            let baseImg;
-            try {
-                baseImg = await loadImage('card.jpg');
-            } catch (e) {
-                alert('Erro ao carregar a imagem base card.jpg. Verifique se o arquivo existe na raiz do projeto.');
+        async function exportCard(cardId) {
+            const card = cardsData.find(c => c.id === cardId);
+            if (!card) {
+                alert('Card não encontrado');
                 return;
             }
             
-            const progressText = document.querySelector('.export-all-section p');
-            const originalText = progressText.textContent;
+            const canvas = document.getElementById('exportCanvas');
+            
+            try {
+                await renderCardToCanvas(card, canvas);
+                
+                const dataUrl = canvas.toDataURL('image/png', 1.0);
+                const link = document.createElement('a');
+                link.download = `Card_PIT+_${normalizeFileName(card.displayName)}.png`;
+                link.href = dataUrl;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                console.error('Erro ao exportar:', error);
+                alert('Erro ao exportar o card: ' + error.message);
+            }
+        }
+        
+        async function exportAllCards() {
+            if (typeof JSZip === 'undefined') {
+                alert('Biblioteca JSZip não carregada. Verifique sua conexão com a internet.');
+                return;
+            }
+            
+            const zip = new JSZip();
+            const canvas = document.getElementById('exportCanvas');
+            const progressEl = document.getElementById('exportProgress');
             
             for (let i = 0; i < cardsData.length; i++) {
                 const card = cardsData[i];
-                progressText.textContent = `Processando ${i + 1} de ${cardsData.length}...`;
+                progressEl.textContent = `Processando ${i + 1} de ${cardsData.length}...`;
                 
-                // Limpa e desenha base
-                ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                ctx.drawImage(baseImg, 0, 0, WIDTH, HEIGHT);
-                
-                // Foto
-                if (card.photoDataUrl) {
-                    try {
-                        const photo = await loadImage(card.photoDataUrl);
-                        
-                        const photoX = WIDTH * 0.285;
-                        const photoY = HEIGHT * 0.455;
-                        const photoW = WIDTH * 0.1714;
-                        const photoH = HEIGHT * 0.2437;
-                        const radius = Math.min(photoW, photoH) / 2;
-                        const centerX = photoX + photoW / 2;
-                        const centerY = photoY + photoH / 2;
-                        
-                        ctx.save();
-                        ctx.beginPath();
-                        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-                        ctx.closePath();
-                        ctx.clip();
-                        
-                        const aspectRatio = photo.width / photo.height;
-                        let drawWidth, drawHeight, drawX, drawY;
-                        
-                        if (aspectRatio > 1) {
-                            drawHeight = radius * 2;
-                            drawWidth = drawHeight * aspectRatio;
-                            drawX = centerX - drawWidth / 2;
-                            drawY = centerY - radius;
-                        } else {
-                            drawWidth = radius * 2;
-                            drawHeight = drawWidth / aspectRatio;
-                            drawX = centerX - radius;
-                            drawY = centerY - drawHeight / 2;
-                        }
-                        
-                        ctx.drawImage(photo, drawX, drawY, drawWidth, drawHeight);
-                        ctx.restore();
-                        
-                        ctx.beginPath();
-                        ctx.arc(centerX, centerY, radius + 3, 0, Math.PI * 2);
-                        ctx.strokeStyle = '#d4af37';
-                        ctx.lineWidth = 6;
-                        ctx.stroke();
-                    } catch (e) {
-                        console.error('Erro ao carregar foto:', card.name);
-                    }
+                try {
+                    await renderCardToCanvas(card, canvas);
+                    
+                    const dataUrl = canvas.toDataURL('image/png', 1.0);
+                    const base64Data = dataUrl.split(',')[1];
+                    const fileName = `Card_PIT+_${normalizeFileName(card.displayName)}.png`;
+                    
+                    zip.file(fileName, base64Data, { base64: true });
+                } catch (error) {
+                    console.error('Erro ao processar card:', card.displayName, error);
                 }
-                
-                // Nome
-                const nameX = WIDTH * 0.17;
-                const nameY = HEIGHT * 0.755;
-                const nameW = WIDTH * 0.27;
-                const nameH = HEIGHT * 0.055;
-                
-                ctx.fillStyle = '#1a2d4a';
-                let fontSize = 18;
-                ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                
-                while (ctx.measureText(card.name.toUpperCase()).width > nameW - 20 && fontSize > 10) {
-                    fontSize--;
-                    ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-                }
-                ctx.fillText(card.name.toUpperCase(), nameX + nameW / 2, nameY + nameH / 2);
-                
-                // Agência
-                const agencyX = WIDTH * 0.47;
-                const agencyY = HEIGHT * 0.755;
-                const agencyW = WIDTH * 0.27;
-                const agencyH = HEIGHT * 0.055;
-                
-                fontSize = 18;
-                ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-                while (ctx.measureText(card.agency.toUpperCase()).width > agencyW - 20 && fontSize > 10) {
-                    fontSize--;
-                    ctx.font = `bold ${fontSize}px Montserrat, Arial, sans-serif`;
-                }
-                ctx.fillText(card.agency.toUpperCase(), agencyX + agencyW / 2, agencyY + agencyH / 2);
-                
-                // Adiciona ao ZIP
-                const fileName = `Card_PIT+_${normalizeFileName(card.name).replace(/\s+/g, '_')}.png`;
-                const dataUrl = canvas.toDataURL('image/png', 1.0);
-                const base64Data = dataUrl.split(',')[1];
-                zip.file(fileName, base64Data, { base64: true });
             }
             
-            progressText.textContent = 'Gerando arquivo ZIP...';
+            progressEl.textContent = 'Gerando arquivo ZIP...';
             
-            // Gera e baixa o ZIP
-            const content = await zip.generateAsync({ type: 'blob' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(content);
-            link.download = 'Cards_PIT+_Super_Barreiras.zip';
-            link.click();
+            try {
+                const content = await zip.generateAsync({ type: 'blob' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(content);
+                link.download = 'Cards_PIT+_Super_Barreiras.zip';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                console.error('Erro ao gerar ZIP:', error);
+                alert('Erro ao gerar arquivo ZIP: ' + error.message);
+            }
             
-            progressText.textContent = originalText;
+            progressEl.textContent = 'Baixa todos os cards em um arquivo ZIP';
         }
         
-        // Limpa tudo
         function clearAll() {
-            document.getElementById('dataInput').value = '';
             document.getElementById('cardsContainer').innerHTML = '';
             document.getElementById('statsSection').classList.add('hidden');
             document.getElementById('exportAllSection').classList.add('hidden');
@@ -1077,7 +722,6 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             document.getElementById('folderBtn').querySelector('span').textContent = '📂 Clique para selecionar a pasta';
             document.getElementById('folderInput').value = '';
             cardsData = [];
-            photoFiles = {};
         }
     </script>
 </body>
