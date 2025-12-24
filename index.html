@@ -488,7 +488,7 @@
                 <li>Cole a planilha com os dados (Nome e Agência separados por TAB)</li>
                 <li>Selecione a pasta com as fotos dos colaboradores</li>
                 <li>As fotos devem ter o nome do colaborador (ex: "JOÃO SILVA.jpg" ou "joao silva.png")</li>
-                <li>A imagem base "card.jpeg" deve estar na raiz do projeto</li>
+                <li>A imagem base "card.jpg" deve estar na raiz do projeto</li>
                 <li>Formatos aceitos: JPG, JPEG, PNG, WEBP</li>
             </ul>
         </div>
@@ -713,7 +713,7 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             document.getElementById('exportAllSection').classList.remove('hidden');
         }
         
-        // Carrega a imagem base (card.jpeg na raiz)
+        // Carrega a imagem base (card.jpg na raiz)
         async function loadBaseImage() {
             return new Promise((resolve) => {
                 const img = new Image();
@@ -736,7 +736,7 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
                     baseImageLoaded = null;
                     resolve();
                 };
-                img.src = 'card.jpeg';
+                img.src = 'card.jpg';
             });
         }
         
@@ -755,7 +755,7 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
                 
                 wrapper.innerHTML = `
                     <div class="card-container" id="card-${card.id}">
-                        <img class="card-base" src="card.jpeg" alt="Card Base" crossorigin="anonymous">
+                        <img class="card-base" src="card.jpg" alt="Card Base" crossorigin="anonymous">
                         <img class="card-photo" id="photo-${card.id}" src="${photoSrc}" alt="Foto" style="${photoStyle}" crossorigin="anonymous">
                         <div class="card-name">${card.name}</div>
                         <div class="card-agency">${card.agency}</div>
@@ -832,7 +832,7 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             canvas.height = HEIGHT;
             
             // Carrega e desenha a imagem base
-            const baseImg = await loadImage('card.jpeg');
+            const baseImg = await loadImage('card.jpg');
             ctx.drawImage(baseImg, 0, 0, WIDTH, HEIGHT);
             
             // Desenha a foto (se existir)
@@ -950,9 +950,9 @@ PEDRO OLIVEIRA	FORMOSA DO RIO PRETO
             
             let baseImg;
             try {
-                baseImg = await loadImage('card.jpeg');
+                baseImg = await loadImage('card.jpg');
             } catch (e) {
-                alert('Erro ao carregar a imagem base card.jpeg. Verifique se o arquivo existe na raiz do projeto.');
+                alert('Erro ao carregar a imagem base card.jpg. Verifique se o arquivo existe na raiz do projeto.');
                 return;
             }
             
