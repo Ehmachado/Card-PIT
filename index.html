@@ -209,10 +209,10 @@
         
         .card-photo {
             position: absolute;
-            width: 15%;
+            width: 18%;
             aspect-ratio: 1;
-            top: 47%;
-            left: 29.5%;
+            top: 54.5%;
+            left: 26.5%;
             transform: translate(-50%, -50%);
             border-radius: 50%;
             object-fit: cover;
@@ -338,7 +338,7 @@
         <div class="instructions">
             <h3>📋 Como usar:</h3>
             <ul>
-                <li>Coloque o arquivo <strong>card.jpg</strong> na mesma pasta do index.html</li>
+                <li>Coloque o arquivo <strong>card.jpeg</strong> na mesma pasta do index.html</li>
                 <li>Selecione a pasta com as fotos dos colaboradores</li>
                 <li>Um card será gerado para cada foto (sem nome/agência)</li>
             </ul>
@@ -397,9 +397,9 @@
         const CARD_HEIGHT = 924;
         
         // Posições dos elementos (em percentual da imagem)
-        const PHOTO_CENTER_X = 0.295;
-        const PHOTO_CENTER_Y = 0.47;
-        const PHOTO_RADIUS_PERCENT = 0.075;
+        const PHOTO_CENTER_X = 0.265;  // 0.295 - 10% para esquerda
+        const PHOTO_CENTER_Y = 0.545;  // 0.47 + 15% para baixo
+        const PHOTO_RADIUS_PERCENT = 0.09;  // 0.075 + 20% = 0.09
         
         // Carrega imagem base ao iniciar
         window.onload = function() {
@@ -419,15 +419,15 @@
                 const status = document.getElementById('baseImageStatus');
                 status.style.display = 'block';
                 status.className = 'base-image-status success';
-                status.textContent = '✓ Imagem base card.jpg carregada com sucesso! (' + canvas.width + 'x' + canvas.height + ')';
+                status.textContent = '✓ Imagem base card.jpeg carregada com sucesso! (' + canvas.width + 'x' + canvas.height + ')';
             };
             img.onerror = function() {
                 const status = document.getElementById('baseImageStatus');
                 status.style.display = 'block';
                 status.className = 'base-image-status error';
-                status.textContent = '✗ Erro: Arquivo card.jpg não encontrado! Coloque o arquivo na mesma pasta do index.html';
+                status.textContent = '✗ Erro: Arquivo card.jpeg não encontrado! Coloque o arquivo na mesma pasta do index.html';
             };
-            img.src = 'card.jpg?' + new Date().getTime();
+            img.src = 'card.jpeg?' + new Date().getTime();
         }
         
         // Event listener para seleção de pasta
@@ -486,7 +486,7 @@
             const files = document.getElementById('folderInput').files;
             
             if (!baseImageDataUrl) {
-                alert('Erro: Imagem base card.jpg não foi carregada. Verifique se o arquivo existe na mesma pasta do index.html.');
+                alert('Erro: Imagem base card.jpeg não foi carregada. Verifique se o arquivo existe na mesma pasta do index.html.');
                 return;
             }
             
